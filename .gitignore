@@ -1,4 +1,4 @@
 Info.md
-webiste/env/
-website/django_website/__pychache__/
+website/env/
 .env.dev
+website/django_website/__pycache__/
