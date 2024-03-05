@@ -3,6 +3,6 @@
 
  ## Tech-stack
  - Django as Framework for the website
- - Docker and Docker-Compose for deployment over GitHub Actions
+ - Docker and Docker-Compose for deployment over GitHub Actions and DockerHub
  - Nginx and Gunicorn 
- - PostgresSQL with Psycopg2 as DB 
+ - PostgresSQL with Psycopg2 
