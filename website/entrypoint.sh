@@ -11,8 +11,8 @@ then
     echo "PostgreSQL started"
 fi
 # commentout when the migration should not run on every restart or so 
-# python manage.py flush --no-input
-# python manage.py migrate
+python manage.py flush --no-input
+python manage.py migrate
 
 # Run it manuelly when needed after container spin up:
 # $ docker-compose exec web python manage.py flush --no-input

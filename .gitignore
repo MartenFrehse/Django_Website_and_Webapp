@@ -1,4 +1,5 @@
 Info.md
 website/env/
-.env.dev
+.env.prod
+.env.prod.db
 website/django_website/__pycache__/
