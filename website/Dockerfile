@@ -17,7 +17,7 @@ COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 
 # copy entrypoint.sh
-COPY ./entrypoint.sh .
+COPY ./entrypoint.sh /usr/src/website/
 RUN sed -i 's/\r$//g' /usr/src/website/entrypoint.sh
 RUN chmod +x /usr/src/website/entrypoint.sh
 

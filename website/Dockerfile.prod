@@ -1,0 +1,72 @@
+###########
+# BUILDER #
+###########
+
+# pull official base image
+FROM python:3.12.2-slim as builder
+
+# set work directory
+WORKDIR /usr/src/website
+
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# install system dependencies
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends gcc
+
+# lint
+RUN pip install --upgrade pip
+RUN pip install flake8==7.0.0
+COPY . /usr/src/website/
+# to make flake execute without errors: --exit-zero
+RUN flake8 --ignore=E501,F401 . --exit-zero
+
+# install python dependencies
+COPY ./requirements.txt .
+RUN pip wheel --no-cache-dir --no-deps --wheel-dir /usr/src/website/wheels -r requirements.txt
+
+
+#########
+# FINAL #
+#########
+
+# pull official base image
+FROM python:3.12.2-slim
+
+# create directory for the app user
+RUN mkdir -p /home/website
+
+# create the app user
+RUN addgroup --system website && adduser --system --group website
+
+# create the appropriate directories
+ENV HOME=/home/website
+ENV WEBSITE_HOME=/home/website/web
+RUN mkdir $WEBSITE_HOME
+WORKDIR $WEBSITE_HOME
+
+# install dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends netcat-openbsd
+COPY --from=builder /usr/src/website/wheels /wheels
+COPY --from=builder /usr/src/website/requirements.txt .
+RUN pip install --upgrade pip
+RUN pip install --no-cache /wheels/*
+
+# copy entrypoint.prod.sh
+COPY ./entrypoint.prod.sh .
+RUN sed -i 's/\r$//g'  $WEBSITE_HOME/entrypoint.prod.sh
+RUN chmod +x  $WEBSITE_HOME/entrypoint.prod.sh
+
+# copy project
+COPY . $WEBSITE_HOME
+
+# chown all the files to the app user
+RUN chown -R website:website $WEBSITE_HOME
+
+# change to the app user
+USER website
+
+# run entrypoint.prod.sh
+ENTRYPOINT ["/home/website/web/entrypoint.prod.sh"]
