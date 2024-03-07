@@ -45,6 +45,7 @@ RUN addgroup --system website && adduser --system --group website
 ENV HOME=/home/website
 ENV WEBSITE_HOME=/home/website/web
 RUN mkdir $WEBSITE_HOME
+RUN mkdir $WEBSITE_HOME/staticfiles
 WORKDIR $WEBSITE_HOME
 
 # install dependencies
