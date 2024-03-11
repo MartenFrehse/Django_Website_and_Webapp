@@ -64,6 +64,7 @@ jobs:
           # docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           
           # echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
+      - name: Push to Docker Hub 
         run: |
           docker-compose -f docker-compose.prod.yml push
       
