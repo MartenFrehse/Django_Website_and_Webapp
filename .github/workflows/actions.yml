@@ -61,7 +61,6 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
           # docker-compose -f docker-compose.prod.yml push 
-          # docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           
           # echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
       # - name: Push to Docker Hub 
