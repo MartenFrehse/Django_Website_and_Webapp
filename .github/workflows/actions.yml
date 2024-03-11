@@ -1,0 +1,70 @@
+name: Deploy Django Project
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      # .env.prod
+      DEBUG: 0 
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      DJANGO_ALLOWED_HOSTS: localhost 127.0.0.1 [::1]
+      SQL_ENGINE: django.db.backends.postgresql
+      SQL_DATABASE: naturbienen_db
+      SQL_USER: ${{ secrets.SQL_USER }}
+      SQL_PASSWORD: ${{ secrets.SQL_PASSWORD }}
+      SQL_HOST: db
+      SQL_PORT: ${{ secrets.SQL_PORT}}
+      DATABASE: postgres
+      # .env.prod.db
+      POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+      POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+      POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Build and push Docker images
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          echo "Creating .env.prod file..."
+          echo "DEBUG=0" > .env.prod
+          echo "SECRET_KEY=$SECRET_KEY" >> .env.prod
+          echo "DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]" >> .env.prod
+          echo "SQL_ENGINE=django.db.backends.postgresql" >> .env.prod
+          echo "SQL_DATABASE=naturbienen_db" >> .env.prod
+          echo "SQL_USER=$SQL_USER" >> .env.prod
+          echo "SQL_PASSWORD=$SQL_PASSWORD" >> .env.prod
+          echo "SQL_HOST=db" >> .env.prod 
+          echo "SQL_PORT=$SQL_PORT" >>.env.prod
+          echo "DATABASE=postgres" >> .env.prod
+
+          echo "Creating .env.prod.db file..."
+          echo "POSTGRES_USER=$POSTGRES_USER" > .env.prod.db
+          echo "POSTGRES_PASSWORD=$POSTGRES_PASSWORD" >> .env.prod.db
+          echo "POSTGRES_DB=$POSTGRES_DB" >> .env.prod.db
+          
+          docker-compose -f docker-compose.prod.yml build
+          # docker-compose -f docker-compose.prod.yml push 
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+          docker-compose -f docker-compose.prod.yml push
+      
+      # - name: Deploy to server
+      #   env:
+      #     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      #     SSH_USERNAME: 
+      #     SSH_HOST: 
+      #   run: |
+      #     mkdir -p ~/.ssh
+      #     echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+      #     ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
+
+      #     ssh -i ~/.ssh/id_rsa $SSH_USERNAME@$SSH_HOST "docker-compose -f /path/to/your/docker-compose.yml pull"
