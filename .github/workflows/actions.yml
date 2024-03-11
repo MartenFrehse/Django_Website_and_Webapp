@@ -56,7 +56,7 @@ jobs:
           # docker-compose -f docker-compose.prod.yml push 
           # docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           
-          echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
+          echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin "${DOCKER_USERNAME}"
           
           docker-compose -f docker-compose.prod.yml push
       
