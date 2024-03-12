@@ -31,18 +31,11 @@ services:
       - media_volume:/home/website/web/mediafiles
       - /etc/letsencrypt:/etc/letsencrypt
     ports:
-      # - 1337:80
-      - "80:80"
-      - "443:443"
+      - 127.0.0.1:1337:80
+      # - "80:80"
+      # - "443:443"
     depends_on:
       - web
-
-  certbot:
-      image: certbot/certbot
-      volumes:
-        - /etc/letsencrypt:/etc/letsencrypt
-        - /var/lib/letsencrypt:/var/lib/letsencrypt
-      entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 
 volumes:
   postgres_data:

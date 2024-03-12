@@ -2,4 +2,4 @@ Info.md
 website/env/
 .env.prod
 .env.prod.db
-website/django_website/__pycache__/
+*__pycache__*

@@ -24,5 +24,7 @@ RUN chmod +x /usr/src/website/entrypoint.sh
 # copy project
 COPY . .
 
+EXPOSE 8000
+
 # run entrypoint.sh
 ENTRYPOINT ["/usr/src/website/entrypoint.sh"]
