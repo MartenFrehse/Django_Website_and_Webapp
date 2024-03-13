@@ -1,3 +1,9 @@
+body {
+  font-family: "Montserrat-Medium", Arial, sans-serif;
+  margin: 0;
+  display: block;
+}
+
 /*
 ===================================
 NAV BAR STYLE
@@ -10,6 +16,9 @@ a {
 
 /* Add a black background color to the top navigation */
 .topnav {
+  position: fixed; 
+  top: 0; 
+  width: 100%;
   background-color: rgba(23,157,151,0.5);
   overflow: hidden;
   border-bottom: rgba(27,132,168,1);
@@ -67,3 +76,41 @@ a {
     text-align: left;
   }
 }
+
+/*
+===================================
+HEADER STYLE
+===================================
+*/
+
+.header {
+  margin-top: 51px;
+  height: 216px;
+  width: 100%;
+  /* background-color: red; */
+  text-align: center;
+  border-bottom: rgb(82, 82, 82);
+  border-bottom-style: solid;
+  position: relative;
+  background-image: url('../images/Banner/Banner-collage2.jpg');
+}
+
+.header-content {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header h1{
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 90px; 
+  margin: 0;
+  text-shadow: 3px 3px 5px rgba(109, 109, 109, 0.719);
+}
+
+/* .index-header {
+  background-image: url('../images/Banner/Banner-collage2.jpg');
+} */

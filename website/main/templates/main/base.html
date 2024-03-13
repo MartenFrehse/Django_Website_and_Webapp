@@ -11,7 +11,7 @@
         <meta name="viewport"
             content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
             <!-- adding Stylesheet -->
-            <link rel="stylesheet" href="static/main/css/styles.css">
+            <link rel="stylesheet" href="../../static/main/css/styles.css">
             <!-- Icons geadded für verschiedene Geräte -->
             <link rel="apple-touch-icon" sizes="57x57" href="static/main/images/Icon/apple-icon-57x57.png">
             <link rel="apple-touch-icon" sizes="60x60" href="static/main/images/Icon/apple-icon-60x60.png">
@@ -42,23 +42,12 @@
 <body>
     <header>
         
-        <!-- Navigation Bar 
-        {% block navbar %}
+        <!-- Navigation Bar -->
         <div class="topnav" id="myTopnav">
-            <a href="index.html" class="active">Startseite</a>
-            <a href="biene.html">Biene</a>
-            <a href="wildbiene.html">Wildbiene</a>
-            <a href="shop.html">Shop</a>
-            <a class="icon" onclick="navBar()">
-              <i class="fa fa-bars"></i>
-            </a>
-        </div> 
-        {% endblock %}-->
-        <div class="topnav" id="myTopnav">
-            <a href="index.html" {% if active_link == 'index' %}class="active"{% endif %}>Startseite</a>
-            <a href="biene.html" {% if active_link == 'biene' %}class="active"{% endif %}>Biene</a>
-            <a href="wildbiene.html" {% if active_link == 'wildbiene' %}class="active"{% endif %}>Wildbiene</a>
-            <a href="shop.html" {% if active_link == 'shop' %}class="active"{% endif %}>Shop</a>
+            <a href="{% url 'index' %}" {% if active_link == 'index' %}class="active"{% endif %}>Startseite</a>
+            <a href="{% url 'biene' %}" {% if active_link == 'biene' %}class="active"{% endif %}>Biene</a>
+            <a href="{% url 'wildbiene' %}" {% if active_link == 'wildbiene' %}class="active"{% endif %}>Wildbiene</a>
+            <a href="{% url 'shop' %}" {% if active_link == 'shop' %}class="active"{% endif %}>Shop</a>
             <a class="icon" onclick="navBar()">
                 <i class="fa fa-bars"></i>
             </a>
@@ -70,7 +59,7 @@
         {% endblock %}
         
         <!-- JS Script -->
-        <script src="static/main/js/navbar.js"></script>
+        <script src="../../static/main/js/navbar.js"></script>
     </header>
 
     <main>
@@ -81,9 +70,9 @@
     <footer id="footer">
         <!-- Bottom NavBar -->
         <div class="bottom-nav">
-            <a href="index.html">Startseite</a> 
-            <a href="impressum.html">Impressum</a> 
-            <a href="kontakt.html">Kontakt</a>
+            <a href="{% url 'index' %}">Startseite</a> 
+            <a href="{% url 'impressum' %}">Impressum</a> 
+            <a href="{% url 'kontakt' %}">Kontakt</a>
           </div>
     </footer>
 </body>

@@ -2,20 +2,15 @@
 
 {% block title %}Naturbienen.de{% endblock %}
 
+{% with active_link="index" %}
+{% endwith %}
+
 {% block header %}
-{% endblock %}
-
-{% block navbar %}
-<div class="topnav" id="myTopnav">
-    <a href="index.html">Startseite</a>
-    <a href="biene.html" class="active">Biene</a>
-    <a href="wildbiene.html">Wildbiene</a>
-    <a href="shop.html">Shop</a>
-    <a class="icon" onclick="navBar()">
-      <i class="fa fa-bars"></i>
-    </a>
+<div class="header">
+    <div class="header-content">
+        <h1>Naturbienen</h1>
+    </div>
 </div>
-
 {% endblock %}
 
 {% block content %}

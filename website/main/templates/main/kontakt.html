@@ -2,10 +2,15 @@
 
 {% block title %}Naturbienen.de{% endblock %}
 
-{% block header %}
-{% endblock %}
+{% with active_link="index" %}
+{% endwith %}
 
-{% block navbar %}
+{% block header %}
+<div class="header">
+    <div class="header-content">
+        <h1>Naturbienen</h1>
+    </div>
+</div>
 {% endblock %}
 
 {% block content %}
