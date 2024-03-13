@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="de">
     <head>
         <title>{% block title %}Naturbienen.de{% endblock %}</title>
@@ -40,20 +41,34 @@
     </head>
 <body>
     <header>
-        {% block header %}
-        <h1 class="head-headline">Naturbienen</h1>
-        <p class="head-description">Alles über die Biene, das Imkern und den Honig.</p>
-        {% endblock %}
-        <!-- Navigation Bar -->
+        
+        <!-- Navigation Bar 
+        {% block navbar %}
         <div class="topnav" id="myTopnav">
             <a href="index.html" class="active">Startseite</a>
-            <a href="Sites/biene.html">Biene</a>
-            <a href="Sites/wildbiene.html">Wildbiene</a>
-            <a href="Sites/shop.html">Shop</a>
+            <a href="biene.html">Biene</a>
+            <a href="wildbiene.html">Wildbiene</a>
+            <a href="shop.html">Shop</a>
             <a class="icon" onclick="navBar()">
               <i class="fa fa-bars"></i>
             </a>
+        </div> 
+        {% endblock %}-->
+        <div class="topnav" id="myTopnav">
+            <a href="index.html" {% if active_link == 'index' %}class="active"{% endif %}>Startseite</a>
+            <a href="biene.html" {% if active_link == 'biene' %}class="active"{% endif %}>Biene</a>
+            <a href="wildbiene.html" {% if active_link == 'wildbiene' %}class="active"{% endif %}>Wildbiene</a>
+            <a href="shop.html" {% if active_link == 'shop' %}class="active"{% endif %}>Shop</a>
+            <a class="icon" onclick="navBar()">
+                <i class="fa fa-bars"></i>
+            </a>
         </div>
+
+        <!-- Header Banner --> 
+        {% block header %}
+            <h1>Default Header</h1>
+        {% endblock %}
+        
         <!-- JS Script -->
         <script src="static/main/js/navbar.js"></script>
     </header>
@@ -67,8 +82,8 @@
         <!-- Bottom NavBar -->
         <div class="bottom-nav">
             <a href="index.html">Startseite</a> 
-            <a href="Sites/impressum.html">Impressum</a> 
-            <a href="Sites/kontakt.html">Kontakt</a>
+            <a href="impressum.html">Impressum</a> 
+            <a href="kontakt.html">Kontakt</a>
           </div>
     </footer>
 </body>
