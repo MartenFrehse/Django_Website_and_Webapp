@@ -114,3 +114,34 @@ HEADER STYLE
 /* .index-header {
   background-image: url('../images/Banner/Banner-collage2.jpg');
 } */
+
+
+/*
+===================================
+FOOTER STYLE
+===================================
+*/
+
+footer {
+  background-color: rgb(85, 85, 85);
+  overflow: hidden;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.bottom-nav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  font-size: 100%;
+  padding: 14px 16px;
+  border-bottom: 3px solid transparent;
+  text-decoration: none;
+}
+
+.bottom-nav a:hover {
+  border-bottom: 3px solid white;
+}
