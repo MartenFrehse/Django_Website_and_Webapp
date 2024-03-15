@@ -17,4 +17,34 @@
 {% block content %}
 <h2>Willkommen</h2>
 <p>Willkommen auf der Startseite.</p>
+
+<h1>{{ channel_info.name }}</h1>
+    <p>Latitude: {{ channel_info.latitude }}</p>
+    <p>Longitude: {{ channel_info.longitude }}</p>
+
+    <h2>Data Feeds</h2>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>{{ channel_info.field1 }}</th>
+            <th>{{ channel_info.field2 }}</th>
+            <th>{{ channel_info.field3 }}</th>
+            <th>{{ channel_info.field4 }}</th>
+            <th>{{ channel_info.field5 }}</th>
+            <th>{{ channel_info.field6 }}</th>
+        </tr>
+        {% for feed in feeds %}
+        <tr>
+            <td>{{ feed.created_at }}</td>
+            <td>{{ feed.field1 }}</td>
+            <td>{{ feed.field2 }}</td>
+            <td>{{ feed.field3 }}</td>
+            <td>{{ feed.field4 }}</td>
+            <td>{{ feed.field5 }}</td>
+            <td>{{ feed.field6 }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
 {% endblock %}
