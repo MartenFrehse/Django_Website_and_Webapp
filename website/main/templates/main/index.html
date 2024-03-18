@@ -2,19 +2,37 @@
 
 {% block title %}Naturbienen.de{% endblock %}
 
+{% block extra_css %}
+    <!-- Plotly.js library -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+{% endblock%}
+
 {% with active_link="index" %}
 {% endwith %}
 
 {% block header %}
-<div class="header">
-    <div class="header-content">
-        <h1>Naturbienen</h1>
+    <div class="header">
+        <div class="header-content">
+            <h1>Naturbienen</h1>
+        </div>
     </div>
-</div>
 {% endblock %}
 
 
 {% block content %}
-<h2>Willkommen</h2>
-<p>Willkommen auf der Startseite.</p>
+    <h2>Willkommen</h2>
+    <p>Willkommen auf der Startseite.</p>
+
+    <h1>Meine Bienenstockwaage</h1>
+        <div id="graph"></div>
+
+    <!-- Render Plotly graph -->
+    <script>
+        // Parse the JSON data passed from the Django view
+        var graphJson = JSON.parse('{{ graph_json|escapejs }}');
+
+        // Render the Plotly graph
+        Plotly.newPlot('graph', graphJson.data, graphJson.layout);
+    </script>
+
 {% endblock %}
