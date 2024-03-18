@@ -3,16 +3,15 @@ import requests
 from dotenv import load_dotenv
 import os
 
+
 load_dotenv()
 
 API_KEY = os.getenv('API_KEY')
 CHANNEL_ID_HORNER_MARSCH = os.getenv('CHANNEL_ID_HORNER_MARSCH')
 
-
 def index(request):
     url = f'https://api.thingspeak.com/channels/{CHANNEL_ID_HORNER_MARSCH}/feeds.json?api_key={API_KEY}'
     response=requests.get(url).json()
-    print(response)
 
     channel_info = response['channel']
     feeds = response['feeds']

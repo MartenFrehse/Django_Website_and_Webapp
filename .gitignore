@@ -1,5 +1,6 @@
 Info.md
 website/env/
+.env.dev
 .env.prod
 .env.prod.db
 *__pycache__*
