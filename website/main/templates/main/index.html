@@ -2,49 +2,37 @@
 
 {% block title %}Naturbienen.de{% endblock %}
 
+{% block extra_css %}
+    <!-- Plotly.js library -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+{% endblock%}
+
 {% with active_link="index" %}
 {% endwith %}
 
 {% block header %}
-<div class="header">
-    <div class="header-content">
-        <h1>Naturbienen</h1>
+    <div class="header">
+        <div class="header-content">
+            <h1>Naturbienen</h1>
+        </div>
     </div>
-</div>
 {% endblock %}
 
 
 {% block content %}
-<h2>Willkommen</h2>
-<p>Willkommen auf der Startseite.</p>
+    <h2>Willkommen</h2>
+    <p>Willkommen auf der Startseite.</p>
 
-<h1>{{ channel_info.name }}</h1>
-    <p>Latitude: {{ channel_info.latitude }}</p>
-    <p>Longitude: {{ channel_info.longitude }}</p>
+    <h1>Meine Bienenstockwaage</h1>
+        <div id="graph"></div>
 
-    <h2>Data Feeds</h2>
-    <table>
-        <tr>
-            <th>Time</th>
-            <th>{{ channel_info.field1 }}</th>
-            <th>{{ channel_info.field2 }}</th>
-            <th>{{ channel_info.field3 }}</th>
-            <th>{{ channel_info.field4 }}</th>
-            <th>{{ channel_info.field5 }}</th>
-            <th>{{ channel_info.field6 }}</th>
-        </tr>
-        {% for feed in feeds %}
-        <tr>
-            <td>{{ feed.created_at }}</td>
-            <td>{{ feed.field1 }}</td>
-            <td>{{ feed.field2 }}</td>
-            <td>{{ feed.field3 }}</td>
-            <td>{{ feed.field4 }}</td>
-            <td>{{ feed.field5 }}</td>
-            <td>{{ feed.field6 }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+    <!-- Render Plotly graph -->
+    <script>
+        // Parse the JSON data passed from the Django view
+        var graphJson = JSON.parse('{{ graph_json|escapejs }}');
 
+        // Render the Plotly graph
+        Plotly.newPlot('graph', graphJson.data, graphJson.layout);
+    </script>
 
 {% endblock %}
