@@ -5,8 +5,62 @@ body {
 }
 
 main {
-  height: 4000px;
+  /* height: 4000px; */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 60px;
 }
+
+main h2{
+  text-align: center;
+  font-size: 240%;
+}
+
+article {
+  margin: 0 15% 0 15%; 
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: center;
+  background-color: white;
+  border-bottom: 2px solid #636363;
+}
+
+img {
+  margin-bottom: 10px;
+}
+
+img.shop {
+  border: solid 2px black;
+}
+
+.text_center {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.text {
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+#responsive-picture {
+    max-width: 100%;
+    height: auto;
+}
+
+p { 
+  text-align: center;
+}
+
+.link {
+  color: black; 
+}
+
+ul {
+  text-align: left;
+}
+
 
 /*
 ===================================
@@ -135,6 +189,7 @@ footer {
   position: fixed;
   left: 0;
   bottom: 0;
+  height: 50px;
 }
 
 .bottom-nav a {
@@ -142,10 +197,11 @@ footer {
   display: block;
   color: white;
   text-align: center;
-  font-size: 100%;
-  padding: 14px 16px;
+  font-size: 14px;
+  padding: 10px 15px;
   border-bottom: 3px solid transparent;
   text-decoration: none;
+  max-width: 1200px;
 }
 
 .bottom-nav a:hover {
@@ -164,8 +220,116 @@ footer {
 
 .bottom-nav .copyright {
   color: white;
-  font-size: 100%;
+  font-size: 14px;
   margin-right: 4%;
 }
 
+/*
+=============================
+IMAGE-CONTAINER 
+=============================
+*/
 
+/* Position the image container (needed to position the left and right arrows) */
+.imageContainer {
+  position: relative;
+  max-width: 1024px;
+  /* width: 1024px; */
+  margin: auto;
+  margin-bottom: 10px;
+} 
+
+/* Hide the images by default */
+.imageSlide {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+cursor: pointer;
+position: absolute;
+top: 40%;
+width: auto;
+padding: 16px;
+margin-top: -50px;
+color: white;
+font-weight: bold;
+font-size: 20px;
+border-radius: 0 3px 3px 0;
+user-select: none;
+-webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Position the prev button to the left */
+.prev {
+left: 0;
+border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: white;
+  padding: 2px 16px;
+  color: black;
+}
+
+/* Center the little pictures under the big one */
+.row {
+  display: flex;
+  justify-content: center;
+}
+/*
+.row {
+  margin: 0 auto;
+  position: absolute;
+}
+*/
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
