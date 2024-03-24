@@ -146,12 +146,13 @@ HEADER STYLE
   margin-top: 51px;
   height: 216px;
   width: 100%;
-  /* background-color: red; */
   text-align: center;
   border-bottom: rgb(82, 82, 82);
   border-bottom-style: solid;
   position: relative;
   background-image: url('../images/Banner/Banner-collage2.jpg');
+  /* background-size: cover; /* Ensure the background image covers the header */
+  /* background-position: center; Center the background image */
   z-index: 500;
 }
 
@@ -169,6 +170,19 @@ HEADER STYLE
   font-size: 90px; 
   margin: 0;
   text-shadow: 3px 3px 5px rgba(109, 109, 109, 0.719);
+}
+
+
+@media screen and (max-width: 768px) {
+  .header h1 {
+    font-size: 60px; 
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .header h1 {
+    font-size: 40px; 
+  }
 }
 
 /* .index-header {
