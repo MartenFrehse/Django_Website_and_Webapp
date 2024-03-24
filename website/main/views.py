@@ -11,19 +11,25 @@ API_KEY = os.getenv('API_KEY')
 CHANNEL_ID_HORNER_MARSCH = os.getenv('CHANNEL_ID_HORNER_MARSCH')
 
 def index(request):
-    url = f'https://api.thingspeak.com/channels/{CHANNEL_ID_HORNER_MARSCH}/feeds.json?api_key={API_KEY}&round=2&days=14&timescale=30'
+    # GET Parameter from the html page 
+    days = request.GET.get('days', '14')
+
+    y1_min = request.GET.get('y1_min', None)
+    y1_max = request.GET.get('y1_max', None)
+    y2_min = request.GET.get('y2_min', None)
+    y2_max = request.GET.get('y2_max', None)
+
+    url = f'https://api.thingspeak.com/channels/{CHANNEL_ID_HORNER_MARSCH}/feeds.json?api_key={API_KEY}&round=2&days={days}&timescale=30'
+
     response=requests.get(url).json()
 
     feeds = response['feeds']
+    
 
     # Initialize variables to store the last valid data points
     last_valid_field1 = None
     last_valid_field2 = None
 
-    # Extracting data for plotting
-    # x_data = [feed['created_at'] for feed in feeds]
-    # field1_data = [float(feed['field1']) for feed in feeds]
-    # field2_data = [float(feed['field2']) for feed in feeds]
     x_data = []
     field1_data = []
     field2_data = []
@@ -42,9 +48,19 @@ def index(request):
             last_valid_field2 = float(feed['field2'])
         field2_data.append(last_valid_field2)
 
+    # for feed in feeds1:
+    #     x_data.append(feed['created_at'])
+    #     last_valid_field1 = float(feed['field1']) if feed['field1'] is not None else last_valid_field1
+    #     field1_data.append(last_valid_field1)
+
+    # # Extract data from the second API response
+    # for feed in feeds2:
+    #     last_valid_field2 = float(feed['field2']) if feed['field2'] is not None else last_valid_field2
+    #     field2_data.append(last_valid_field2)
+
     # Create traces
-    trace1 = go.Scatter(x=x_data, y=field1_data, mode='lines', name='Field 1', yaxis='y')
-    trace2 = go.Scatter(x=x_data, y=field2_data, mode='lines', name='Field 2', yaxis='y2')
+    trace1 = go.Scatter(x=x_data, y=field1_data, mode='lines', name='Gewicht', yaxis='y')
+    trace2 = go.Scatter(x=x_data, y=field2_data, mode='lines', name='Temperatur', yaxis='y2')
 
     # Define layout with multiple y-axes
     layout = go.Layout(
@@ -56,7 +72,8 @@ def index(request):
             ),
             tickfont=dict(
                 color='blue'
-            )
+            ),
+            range=[float(y1_min), float(y1_max)] if y1_min is not None and y1_max is not None and y1_min != '' and y1_max != '' else None
         ),
         yaxis2=dict(
             title='Außentemperatur',
@@ -67,7 +84,8 @@ def index(request):
                 color='red'
             ),
             overlaying='y',
-            side='right'
+            side='right',
+            range=[float(y1_min), float(y1_max)] if y1_min is not None and y1_max is not None and y1_min != '' and y1_max != '' else None
         )
     )
 

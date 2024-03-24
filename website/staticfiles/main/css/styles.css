@@ -151,8 +151,6 @@ HEADER STYLE
   border-bottom-style: solid;
   position: relative;
   background-image: url('../images/Banner/Banner-collage2.jpg');
-  /* background-size: cover; /* Ensure the background image covers the header */
-  /* background-position: center; Center the background image */
   z-index: 500;
 }
 
