@@ -85,7 +85,7 @@ def index(request):
             ),
             overlaying='y',
             side='right',
-            range=[float(y1_min), float(y1_max)] if y1_min is not None and y1_max is not None and y1_min != '' and y1_max != '' else None
+            range=[float(y2_min), float(y2_max)] if y2_min is not None and y2_max is not None and y2_min != '' and y2_max != '' else None
         )
     )
 
