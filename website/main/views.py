@@ -106,7 +106,7 @@ def impressum(request):
 def kontakt(request):
     return render(request, 'main/kontakt.html')
 
-def shop(request):
+def honig(request):
     return render(request, 'main/honig.html', {'active_link': 'honig'})
 
 def wildbiene(request):
