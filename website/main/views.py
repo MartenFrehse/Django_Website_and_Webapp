@@ -107,7 +107,7 @@ def kontakt(request):
     return render(request, 'main/kontakt.html')
 
 def shop(request):
-    return render(request, 'main/shop.html', {'active_link': 'shop'})
+    return render(request, 'main/honig.html', {'active_link': 'honig'})
 
 def wildbiene(request):
     return render(request, 'main/wildbiene.html', {'active_link': 'wildbiene'})
