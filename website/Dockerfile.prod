@@ -70,5 +70,20 @@ RUN chown -R website:website $WEBSITE_HOME
 # change to the app user
 USER website
 
+# # run migrations and create cache table
+# RUN python manage.py makemigrations
+# RUN python manage.py migrate
+# RUN python manage.py createcachetable
+
+# # create superuser if environment variables are provided
+# ENV DJANGO_SUPERUSER_USERNAME=""
+# ENV DJANGO_SUPERUSER_EMAIL=""
+# RUN if [ -n "$DJANGO_SUPERUSER_USERNAME" ]; then \
+#         python manage.py createsuperuser \
+#             --noinput \
+#             --username $DJANGO_SUPERUSER_USERNAME \
+#             --email $DJANGO_SUPERUSER_EMAIL; \
+#     fi
+
 # run entrypoint.prod.sh
 ENTRYPOINT ["/home/website/web/entrypoint.prod.sh"]
