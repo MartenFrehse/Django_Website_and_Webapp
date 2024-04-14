@@ -57,12 +57,14 @@ RUN pip install --upgrade pip
 RUN pip install --no-cache /wheels/*
 
 # copy entrypoint.prod.sh
-COPY ./entrypoint.prod.sh .
-RUN sed -i 's/\r$//g'  $WEBSITE_HOME/entrypoint.prod.sh
-RUN chmod +x  $WEBSITE_HOME/entrypoint.prod.sh
+# COPY ./entrypoint.prod.sh .
+# RUN sed -i 's/\r$//g'  $WEBSITE_HOME/entrypoint.prod.sh
+# RUN chmod +x  $WEBSITE_HOME/entrypoint.prod.sh
 
 # copy project
 COPY . $WEBSITE_HOME
+RUN sed -i 's/\r$//g'  $WEBSITE_HOME/entrypoint.prod.sh
+RUN chmod +x  $WEBSITE_HOME/entrypoint.prod.sh
 
 # chown all the files to the app user
 RUN chown -R website:website $WEBSITE_HOME
