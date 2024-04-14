@@ -48,16 +48,6 @@ def index(request):
             last_valid_field2 = float(feed['field2'])
         field2_data.append(last_valid_field2)
 
-    # for feed in feeds1:
-    #     x_data.append(feed['created_at'])
-    #     last_valid_field1 = float(feed['field1']) if feed['field1'] is not None else last_valid_field1
-    #     field1_data.append(last_valid_field1)
-
-    # # Extract data from the second API response
-    # for feed in feeds2:
-    #     last_valid_field2 = float(feed['field2']) if feed['field2'] is not None else last_valid_field2
-    #     field2_data.append(last_valid_field2)
-
     # Create traces
     trace1 = go.Scatter(x=x_data, y=field1_data, mode='lines', name='Gewicht', yaxis='y')
     trace2 = go.Scatter(x=x_data, y=field2_data, mode='lines', name='Temperatur', yaxis='y2')
