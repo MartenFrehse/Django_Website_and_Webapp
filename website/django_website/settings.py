@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # 'background_task',
     'upload',
     'main',
+    'todo',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,10 @@ ROOT_URLCONF = 'django_website.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'main', 'templates/main')],
+        'DIRS': [
+                os.path.join(BASE_DIR, 'main', 'templates/main'),
+                os.path.join(BASE_DIR, 'todo', 'templates/todo')
+                ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
