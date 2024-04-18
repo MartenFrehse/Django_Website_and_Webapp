@@ -21,7 +21,7 @@ RUN pip install --upgrade pip
 RUN pip install flake8==7.0.0
 COPY . /usr/src/website/
 # to make flake execute without errors: --exit-zero
-RUN flake8 --ignore=E501,F401 . --exit-zero
+# RUN flake8 --ignore=E501,F401 . --exit-zero
 
 # install python dependencies
 COPY ./requirements.txt .
@@ -45,6 +45,7 @@ RUN addgroup --system website && adduser --system --group website
 ENV HOME=/home/website
 ENV WEBSITE_HOME=/home/website/web
 RUN mkdir $WEBSITE_HOME
+RUN mkdir -p $WEBSITE_HOME/templates  # Create templates directory
 RUN mkdir $WEBSITE_HOME/staticfiles
 RUN mkdir $WEBSITE_HOME/mediafiles
 WORKDIR $WEBSITE_HOME
