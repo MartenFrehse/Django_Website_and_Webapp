@@ -61,16 +61,24 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-                '/home/website/web/templates',  # Mount templates directory in Docker container
-                '/home/website/web/website/main/templates/main',  # Main app templates
-                '/home/website/web/website/todo/templates/todo',  # Todo app templates
-                '/home/website/web/website/django_website/templates',  # Project-level templates
-                '/home/website/web/templates/registration',
+                BASE_DIR/'templates',
+                BASE_DIR/'main/templates',
+                BASE_DIR/'todo/templates',
+                ],
+                
+
+                # BASE DIR/'main/templates',
+                # BASE DIR/'todo/templates',
+                # '/home/website/web/templates',  # Mount templates directory in Docker container
+                # '/home/website/web/website/main/templates/main',  # Main app templates
+                # '/home/website/web/website/todo/templates/todo',  # Todo app templates
+                # '/home/website/web/website/django_website/templates',  # Project-level templates
+                # '/home/website/web/templates/registration',
                 # old and probly not for docker
                 # os.path.join(BASE_DIR, 'registration', 'templates'), # templates from the project such as signup
                 # os.path.join(BASE_DIR, 'main', 'templates/main'),
                 # os.path.join(BASE_DIR, 'todo', 'templates/todo')
-                ],
+                
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

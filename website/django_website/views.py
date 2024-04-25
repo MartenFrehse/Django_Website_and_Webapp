@@ -15,4 +15,4 @@ def signup(request):
             return redirect('todo') 
     else:
         form = UserCreationForm()
-    return render(request, 'registration/signup.html', {'form': form})
+    return render(request, 'templates/signup.html', {'form': form})

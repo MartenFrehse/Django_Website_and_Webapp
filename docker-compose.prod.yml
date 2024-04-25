@@ -9,7 +9,7 @@ services:
     volumes:
       - static_volume:/home/website/web/staticfiles
       - media_volume:/home/website/web/mediafiles
-      - templates_volume:/home/website/web/templates  # Mount templates directory
+      # - templates_volume:/home/website/web/templates  # Mount templates directory
     expose:
       - 8000
     env_file:
@@ -29,7 +29,7 @@ services:
     volumes:
       - static_volume:/home/website/web/staticfiles
       - media_volume:/home/website/web/mediafiles
-      - templates_volume:/home/website/web/templates  # Mount templates directory
+      # - templates_volume:/home/website/web/templates  # Mount templates directory
     ports:
       - 127.0.0.1:1337:80
     depends_on:
@@ -39,4 +39,4 @@ volumes:
   postgres_data:
   static_volume:
   media_volume:
-  templates_volume:
+  # templates_volume:

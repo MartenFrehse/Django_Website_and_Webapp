@@ -45,7 +45,7 @@ RUN addgroup --system website && adduser --system --group website
 ENV HOME=/home/website
 ENV WEBSITE_HOME=/home/website/web
 RUN mkdir $WEBSITE_HOME
-RUN mkdir -p $WEBSITE_HOME/templates  # Create templates directory
+# RUN mkdir -p $WEBSITE_HOME/templates  # Create templates directory
 RUN mkdir $WEBSITE_HOME/staticfiles
 RUN mkdir $WEBSITE_HOME/mediafiles
 WORKDIR $WEBSITE_HOME
