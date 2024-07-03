@@ -142,11 +142,10 @@ HEADER STYLE
 ===================================
 */
 
-.header {
+/* .header {
   margin-top: 51px;
   height: 216px;
   width: 100%;
-  /* background-color: red; */
   text-align: center;
   border-bottom: rgb(82, 82, 82);
   border-bottom-style: solid;
@@ -169,6 +168,54 @@ HEADER STYLE
   font-size: 90px; 
   margin: 0;
   text-shadow: 3px 3px 5px rgba(109, 109, 109, 0.719);
+} */
+
+.header {
+  margin-top: 51px;
+  height: 216px;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid rgb(82, 82, 82);
+  position: relative;
+  background-image: url('../images/Banner/Banner-collage2.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 500;
+}
+
+.header-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header h1 {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 90px;
+  margin: 0;
+  text-shadow: 3px 3px 5px rgba(109, 109, 109, 0.719);
+}
+
+/* Media Query for tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .header {
+    height: 160px; /* Reduce height for tablets */
+  }
+  .header h1 {
+    font-size: 60px; /* Reduce font size for tablets */
+  }
+}
+
+/* Media Query for mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .header {
+    height: 120px; /* Further reduce height for mobile devices */
+    background-position: center;
+  }
+  .header h1 {
+    font-size: 40px; /* Further reduce font size for mobile devices */
+  }
 }
 
 /* .index-header {
