@@ -35,29 +35,29 @@
         Sie hat ein schwarzes Brustteil und fällt mit ihrem fuchsroten, stark behaarten Hinterteil sehr einfach auf. 
         Sie sammelt an vielen verschiedenen Blüten Pollen und ist nicht auf eine bestimmte Blüte angewiesen. 
     </p>
-    <div class="imageContainer">
+    <div class="imageContainer" id="imageContainer">
 
         <!-- Full-width images with number text -->
         <div class="imageSlide">
             <div class="numbertext">1 / 4</div>
-                <img src="../../static/main/images/Wildbienen/Mauerbiene1-1024.jpg" alt="Bienen im Schnee" id="responsive-picture">
+                <img src="../../static/main/images/Wildbienen/Mauerbiene1-1024.jpg" alt="Mauerbienen" class="responsive-picture">
         </div>
         <div class="imageSlide">
             <div class="numbertext">2 / 4</div>
-                <img src="../../static/main/images/Wildbienen/Mauerbiene2-1024.jpg" alt="Bienen im Schnee" id="responsive-picture">
+                <img src="../../static/main/images/Wildbienen/Mauerbiene2-1024.jpg" alt="Mauerbienen" class="responsive-picture">
         </div>
         <div class="imageSlide">
             <div class="numbertext">3 / 4</div>
-                <img src="../../static/main/images/Wildbienen/Mauerbiene3-1024.jpg" alt="Bienen im Schnee" id="responsive-picture">
+                <img src="../../static/main/images/Wildbienen/Mauerbiene3-1024.jpg" alt="Mauerbienen" class="responsive-picture">
         </div>
         <div class="imageSlide">
             <div class="numbertext">4 / 4</div>
-                <img src="../../static/main/images/Wildbienen/Mauerbiene4-1024.jpg" alt="Bienen im Schnee" id="responsive-picture">
+                <img src="../../static/main/images/Wildbienen/Mauerbiene4-1024.jpg" alt="Mauerbienen" class="responsive-picture">
         </div>
 
         <!-- next und previous button -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(+1)">&#10095;</a>
+        <a class="prev" onclick="plusSlides(-1, 'imageContainer')">&#10094;</a>
+        <a class="next" onclick="plusSlides(+1, 'imageContainer')">&#10095;</a>
 
         <!-- Image text -->
         <div class="caption-container">
@@ -67,16 +67,16 @@
         <!-- Thumbnail images -->
         <div class="row">
             <div class="column">
-                <img class="demo cursor" src="../../static/main/images/Wildbienen/Mauerbiene1-1024.jpg" style="width:100%" onclick="currentSlide(1)" alt="Bienenvölker im Schnee bei Sonne">
+                <img class="demo cursor" src="../../static/main/images/Wildbienen/Mauerbiene1-1024.jpg" style="width:100%" onclick="currentSlide(1, 'imageContainer')" alt="Mauerbienen">
             </div>
             <div class="column">
-                <img class="demo cursor" src="../../static/main/images/Wildbienen/Mauerbiene2-1024.jpg" style="width:100%" onclick="currentSlide(2)" alt="Bienenvölker im Schnee">
+                <img class="demo cursor" src="../../static/main/images/Wildbienen/Mauerbiene2-1024.jpg" style="width:100%" onclick="currentSlide(2, 'imageContainer')" alt="Mauerbienen">
             </div>
             <div class="column">
-                <img class="demo cursor" src="../../static/main/images/Wildbienen/Mauerbiene3-1024.jpg" style="width:100%" onclick="currentSlide(3)" alt="Bienenvölker im Schnee">
+                <img class="demo cursor" src="../../static/main/images/Wildbienen/Mauerbiene3-1024.jpg" style="width:100%" onclick="currentSlide(3, 'imageContainer')" alt="Mauerbienen">
             </div>
             <div class="column">
-                <img class="demo cursor" src="../../static/main/images/Wildbienen/Mauerbiene4-1024.jpg" style="width:100%" onclick="currentSlide(4)" alt="Bienenvölker im Schnee">
+                <img class="demo cursor" src="../../static/main/images/Wildbienen/Mauerbiene4-1024.jpg" style="width:100%" onclick="currentSlide(4, 'imageContainer')" alt="Mauerbienen">
             </div>
 
         </div>
