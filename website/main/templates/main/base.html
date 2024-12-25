@@ -23,6 +23,7 @@
             <link rel="stylesheet" href="../../static/main/fonts/css/solid.css">
             <link rel="stylesheet" href="../../static/main/fonts/webfonts/fa-solid-900.ttf">
             <link rel="stylesheet" href="../../static/main/fonts/webfonts/fa-solid-900.woff2">
+            <link rel="stylesheet" href="../../static/main/fonts/"Posterama 2001 W04 Bold.ttf"">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -35,6 +36,7 @@
         <!-- Navigation Bar -->
         <div class="topnav" id="myTopnav">
             <a href="{% url 'index' %}" {% if active_link == 'index' %}class="active"{% endif %}>Startseite</a>
+            <a href="{% url 'waage' %}" {% if active_link == 'waage' %}class="active"{% endif %}>Waage</a>
             <a href="{% url 'biene' %}" {% if active_link == 'biene' %}class="active"{% endif %}>Biene</a>
             <a href="{% url 'wildbiene' %}" {% if active_link == 'wildbiene' %}class="active"{% endif %}>Wildbiene</a>
             <a href="{% url 'honig' %}" {% if active_link == 'shop' %}class="active"{% endif %}>Honig</a>

@@ -11,6 +11,9 @@ API_KEY = os.getenv('API_KEY')
 CHANNEL_ID_HORNER_MARSCH = os.getenv('CHANNEL_ID_HORNER_MARSCH')
 
 def index(request):
+    return render(request, 'main/index.html', {'active_link': 'index'})
+
+def waage(request):
     # GET Parameter from the html page 
     days = request.GET.get('days', '14')
 
@@ -85,7 +88,7 @@ def index(request):
     # Convert the Plotly figure to JSON
     graph_json = fig.to_json()
 
-    return render(request, 'main/index.html', {'active_link': 'index', 'graph_json': graph_json})
+    return render(request, 'main/waage.html', {'active_link': 'waage', 'graph_json': graph_json})
 
 def biene(request):
     return render(request, 'main/biene.html', {'active_link': 'biene'})

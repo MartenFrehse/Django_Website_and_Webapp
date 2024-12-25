@@ -2,11 +2,6 @@
 
 {% block title %}Naturbienen.de{% endblock %}
 
-{% block extra_css %}
-    <!-- Plotly.js library -->
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-{% endblock%}
-
 {% with active_link="index" %}
 {% endwith %}
 
@@ -29,34 +24,5 @@
             Der Frühtrachthonig ist abgefüllt und ab jetzt erhältlich. 
         </p>
     </article>
-
-    <h2>Meine Bienenstockwaage</h2>
-        <div id="graph"></div>
-
-    <!-- Formular für die Anzahl der Tage -->
-    <form action="{% url 'index' %}" method="GET">
-        <label for="days">Anzahl der Tage:</label>
-        <input type="number" id="days" name="days" min="1" max="30">
-        <br>
-        <label for="y1_min">Min. Wert für Gewicht:</label>
-        <input type="number" id="y1_min" name="y1_min" placeholder="Min. Wert für Gewicht eingeben">
-        <label for="y1_max">Max. Wert für Gewicht:</label>
-        <input type="number" id="y1_max" name="y1_max" placeholder="Max. Wert für Gewicht eingeben">
-        <br>
-        <label for="y2_min">Min. Wert für Temperatur:</label>
-        <input type="number" id="y2_min" name="y2_min" placeholder="Min. Wert für Temperatur eingeben">
-        <label for="y2_max">Max. Wert für Temperatur:</label>
-        <input type="number" id="y2_max" name="y2_max" placeholder="Max. Wert für Temperatur eingeben">
-        <button type="submit">Aktualisieren</button>
-    </form>
-
-    <!-- Render Plotly graph -->
-    <script>
-        // Parse the JSON data passed from the Django view
-        var graphJson = JSON.parse('{{ graph_json|escapejs }}');
-
-        // Render the Plotly graph
-        Plotly.newPlot('graph', graphJson.data, graphJson.layout);
-    </script>
 
 {% endblock %}
