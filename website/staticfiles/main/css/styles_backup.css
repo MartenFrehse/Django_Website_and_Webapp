@@ -1,0 +1,406 @@
+/*
+############
+#   Font   #
+############
+*/
+@font-face{
+  font-family: "Posterama 2001 W04 Bold";
+  src: url("../../main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.eot");
+  src: url("../../main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.eot?#iefix")format("embedded-opentype"),
+      url("../../main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.woff")format("woff"),
+      url("../../main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.woff2")format("woff2"),
+      url("../../main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.ttf")format("truetype"),
+      url("../../main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.svg#Posterama 2001 W04 Bold")format("svg");
+  font-weight:normal;
+  font-style:normal;
+  font-display:swap;
+}
+
+body {
+  font-family: "Montserrat-Medium", Arial, sans-serif;
+  margin: 0;
+  display: block;
+}
+
+main {
+  /* height: 4000px; */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+main h2{
+  text-align: center;
+  font-size: 240%;
+}
+
+article {
+  margin: 0 15% 0 15%; 
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: center;
+  background-color: white;
+  border-bottom: 2px solid #636363;
+}
+
+img {
+  margin-bottom: 10px;
+}
+
+img.shop {
+  border: solid 2px black;
+}
+
+.text_center {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.text {
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+.responsive-picture {
+    max-width: 100%;
+    height: auto;
+}
+#responsive-picture {
+  max-width: 100%;
+  height: auto;
+}
+
+
+p { 
+  text-align: center;
+}
+
+.link {
+  color: black; 
+}
+
+ul {
+  text-align: left;
+}
+
+
+/*
+===================================
+NAV BAR STYLE
+===================================
+*/
+a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  position: fixed; 
+  top: 0; 
+  width: 100%;
+  background-color: rgb(132, 184, 125);
+  overflow: hidden;
+  border-bottom: rgb(82, 82, 82);
+  border-bottom-style: solid;
+  z-index: 1000; 
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #179d3f;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #179d3f;
+  color: black;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: fixed;}
+  .topnav.responsive a.icon {
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/*
+===================================
+HEADER STYLE
+===================================
+*/
+
+/* .header {
+  margin-top: 51px;
+  height: 216px;
+  width: 100%;
+  text-align: center;
+  border-bottom: rgb(82, 82, 82);
+  border-bottom-style: solid;
+  position: relative;
+  background-image: url('../images/Banner/Banner-collage2.jpg');
+  z-index: 500;
+}
+
+.header-content {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header h1{
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 90px; 
+  margin: 0;
+  text-shadow: 3px 3px 5px rgba(109, 109, 109, 0.719);
+} */
+
+.header {
+  margin-top: 51px;
+  height: 216px;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid rgb(82, 82, 82);
+  position: relative;
+  background-image: url('../images/Banner/Banner-collage2.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 500;
+}
+
+.header-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header h1 {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-family: "Posterama 2001 W04 Bold";
+  font-size: 90px;
+  margin: 0;
+  text-shadow: 3px 3px 5px rgba(109, 109, 109, 0.719);
+}
+
+/* Media Query for tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .header {
+    height: 160px; /* Reduce height for tablets */
+  }
+  .header h1 {
+    font-size: 60px; /* Reduce font size for tablets */
+  }
+}
+
+/* Media Query for mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .header {
+    height: 120px; /* Further reduce height for mobile devices */
+    background-position: center;
+  }
+  .header h1 {
+    font-size: 40px; /* Further reduce font size for mobile devices */
+  }
+}
+
+/* .index-header {
+  background-image: url('../images/Banner/Banner-collage2.jpg');
+} */
+
+
+/*
+===================================
+FOOTER STYLE
+===================================
+*/
+
+footer {
+  background-color: rgb(85, 85, 85);
+  overflow: hidden;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+}
+
+.bottom-nav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px 15px;
+  border-bottom: 3px solid transparent;
+  text-decoration: none;
+  max-width: 1200px;
+}
+
+.bottom-nav a:hover {
+  border-bottom: 3px solid white;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.bottom-nav .copyright-container {
+  margin-left: auto;
+}
+
+.bottom-nav .copyright {
+  color: white;
+  font-size: 14px;
+  margin-right: 4%;
+}
+
+/*
+=============================
+IMAGE-CONTAINER 
+=============================
+*/
+
+/* Position the image container (needed to position the left and right arrows) */
+.imageContainer {
+  position: relative;
+  max-width: 1024px;
+  /* width: 1024px; */
+  margin: auto;
+  margin-bottom: 10px;
+} 
+
+/* Hide the images by default */
+.imageSlide {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+cursor: pointer;
+position: absolute;
+top: 40%;
+width: auto;
+padding: 16px;
+margin-top: -50px;
+color: white;
+font-weight: bold;
+font-size: 20px;
+border-radius: 0 3px 3px 0;
+user-select: none;
+-webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Position the prev button to the left */
+.prev {
+left: 0;
+border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: white;
+  padding: 2px 16px;
+  color: black;
+}
+
+/* Center the little pictures under the big one */
+.row {
+  display: flex;
+  justify-content: center;
+}
+/*
+.row {
+  margin: 0 auto;
+  position: absolute;
+}
+*/
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}

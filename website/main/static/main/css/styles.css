@@ -5,12 +5,12 @@
 */
 @font-face{
   font-family: "Posterama 2001 W04 Bold";
-  src: url("../../main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.eot");
-  src: url("../../main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.eot?#iefix")format("embedded-opentype"),
-      url("../../main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.woff")format("woff"),
-      url("../../main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.woff2")format("woff2"),
-      url("../../main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.ttf")format("truetype"),
-      url("../../main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.svg#Posterama 2001 W04 Bold")format("svg");
+  src: url("../../staticfiles/main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.eot");
+  src: url("../../staticfiles/main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.eot?#iefix")format("embedded-opentype"),
+      url("../../staticfiles/main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.woff")format("woff"),
+      url("../../staticfiles/main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.woff2")format("woff2"),
+      url("../../staticfiles/main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.ttf")format("truetype"),
+      url("../../staticfiles/main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.svg#Posterama 2001 W04 Bold")format("svg");
   font-weight:normal;
   font-style:normal;
   font-display:swap;
@@ -62,15 +62,10 @@ img.shop {
   margin-bottom: 50px;
 }
 
-.responsive-picture {
+#responsive-picture {
     max-width: 100%;
     height: auto;
 }
-#responsive-picture {
-  max-width: 100%;
-  height: auto;
-}
-
 
 p { 
   text-align: center;
@@ -100,7 +95,7 @@ a {
   position: fixed; 
   top: 0; 
   width: 100%;
-  background-color: rgb(132, 184, 125);
+  background-color: #1B5E20;
   overflow: hidden;
   border-bottom: rgb(82, 82, 82);
   border-bottom-style: solid;
@@ -116,18 +111,22 @@ a {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+
+  margin: 0 15px;
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #179d3f;
-  color: black;
+  /* background-color: #179d3f;
+  color: black; */
+  text-decoration: underline;
 }
 
 /* Add an active class to highlight the current page */
 .topnav a.active {
-  background-color: #179d3f;
-  color: black;
+  /* background-color: #179d3f;
+  color: black; */
+  text-decoration: underline;
 }
 
 /* Hide the link that should open and close the topnav on small screens */
@@ -165,8 +164,8 @@ HEADER STYLE
 ===================================
 */
 
-/* .header {
-  margin-top: 51px;
+.header {
+  /* margin-top: 51px;
   height: 216px;
   width: 100%;
   text-align: center;
@@ -174,7 +173,17 @@ HEADER STYLE
   border-bottom-style: solid;
   position: relative;
   background-image: url('../images/Banner/Banner-collage2.jpg');
-  z-index: 500;
+  z-index: 500; */
+  background-color: #FFC107;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.header .logo {
+  width: 50px;
+  height: 50px;
 }
 
 .header-content {
@@ -186,59 +195,24 @@ HEADER STYLE
 }
 
 .header h1{
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   text-align: center;
+  font-family: "Posterama 2001 W04 Bold";
   font-size: 90px; 
   margin: 0;
   text-shadow: 3px 3px 5px rgba(109, 109, 109, 0.719);
-} */
-
-.header {
-  margin-top: 51px;
-  height: 216px;
-  width: 100%;
-  text-align: center;
-  border-bottom: 1px solid rgb(82, 82, 82);
-  position: relative;
-  background-image: url('../images/Banner/Banner-collage2.jpg');
-  background-size: cover;
-  background-position: center;
-  z-index: 500;
 }
 
-.header-content {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
 
-.header h1 {
-  color: rgb(255, 255, 255);
-  text-align: center;
-  font-family: "Posterama 2001 W04 Bold";
-  font-size: 90px;
-  margin: 0;
-  text-shadow: 3px 3px 5px rgba(109, 109, 109, 0.719);
-}
-
-/* Media Query for tablets (max-width: 768px) */
-@media (max-width: 768px) {
-  .header {
-    height: 160px; /* Reduce height for tablets */
-  }
+@media screen and (max-width: 768px) {
   .header h1 {
-    font-size: 60px; /* Reduce font size for tablets */
+    font-size: 60px; 
   }
 }
 
-/* Media Query for mobile devices (max-width: 480px) */
-@media (max-width: 480px) {
-  .header {
-    height: 120px; /* Further reduce height for mobile devices */
-    background-position: center;
-  }
+@media screen and (max-width: 360px) {
   .header h1 {
-    font-size: 40px; /* Further reduce font size for mobile devices */
+    font-size: 40px; 
   }
 }
 
