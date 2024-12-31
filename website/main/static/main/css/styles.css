@@ -1,29 +1,13 @@
 /*
 ===============
-Font   
-===============
-*/
-@font-face{
-    font-family: "Posterama 2001 W04 Bold";
-    src: url("../../staticfiles/main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.eot");
-    src: url("../../staticfiles/main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.eot?#iefix")format("embedded-opentype"),
-        url("../../staticfiles/main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.woff")format("woff"),
-        url("../../staticfiles/main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.woff2")format("woff2"),
-        url("../../staticfiles/main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.ttf")format("truetype"),
-        url("../../staticfiles/main/fonts/Posterama/bedb96f9dd7dc1113f0ddb36925913ab.svg#Posterama 2001 W04 Bold")format("svg");
-    font-weight:normal;
-    font-style:normal;
-    font-display:swap;
-  }
-/*
-===============
 Allgemeines 
 ===============
 */
 body {
-  font-family: "Montserrat-Medium", Arial, sans-serif;
+  font-family: "Montserrat-Regular", Arial, sans-serif;
   margin: 0;
   display: block;
+  background-color: #FFF3E0;
 }
   
 main {

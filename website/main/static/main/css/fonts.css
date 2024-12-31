@@ -1,0 +1,44 @@
+/* Regular Montserrat */
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('../font/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+/* Bold Montserrat */
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('../font/Montserrat-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+/* Italic Montserrat */
+@font-face {
+    font-family: 'Montserrat-Italic';
+    src: url('../fonts/MeineSchrift-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+
+/* Medium Montserrat */
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url('../font/Montserrat-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+
+@font-face{
+    font-family: "Posterama 2001 W04 Bold";
+    src: url("../Posterama/bedb96f9dd7dc1113f0ddb36925913ab.eot");
+    src: url("../Posterama/bedb96f9dd7dc1113f0ddb36925913ab.eot?#iefix")format("embedded-opentype"),
+        url("../Posterama/bedb96f9dd7dc1113f0ddb36925913ab.woff")format("woff"),
+        url("../Posterama/bedb96f9dd7dc1113f0ddb36925913ab.woff2")format("woff2"),
+        url("../Posterama/bedb96f9dd7dc1113f0ddb36925913ab.ttf")format("truetype"),
+        url("../Posterama/bedb96f9dd7dc1113f0ddb36925913ab.svg#Posterama 2001 W04 Bold")format("svg");
+    font-weight:normal;
+    font-style:normal;
+    font-display:swap;
+  }
