@@ -1,0 +1,315 @@
+/*
+===============
+Allgemeines 
+===============
+*/
+body {
+  font-family: "Montserrat-Regular", Arial, sans-serif;
+  margin: 0;
+  display: block;
+  background-color: #FFF3E0;
+}
+  
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+  
+main h2 {
+  text-align: center;
+  font-size: 240%;
+}
+  
+article {
+  margin: 0 15% 0 15%; 
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: center;
+  background-color: white;
+  border-bottom: 2px solid #636363;
+}
+  
+img {
+  margin-bottom: 10px;
+}
+  
+img.shop {
+  border: solid 2px black;
+}
+  
+.text_center {
+  text-align: center;
+  margin-bottom: 50px;
+}
+  
+.text {
+  text-align: left;
+  margin-bottom: 50px;
+}
+  
+#responsive-picture {
+  max-width: 100%;
+  height: auto;
+}
+  
+p { 
+  text-align: center;
+}
+  
+.link {
+  color: black; 
+}
+  
+ul {
+  text-align: left;
+}
+
+/* 
+======================
+Header Style 
+======================
+*/
+.header {
+  background-color: #FFC107;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+  
+.header .logo {
+  width: 150px;
+  height: 150px;
+}
+  
+.header .title {
+  font-family: "Posterama 2001 W04 Bold";
+  font-size: 90px;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* 
+=======================
+Navbar Style 
+=======================
+*/
+.topnav {
+  background-color: #1B5E20;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+.topnav a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+  
+.topnav a:hover {
+  color: #FFC107;
+}
+
+/* 
+========================
+Responsive Styles 
+========================
+*/
+@media screen and (max-width: 768px) {
+  .header .title {
+    font-size: 24px;
+  }
+
+  .topnav a {
+    font-size: 15px;
+    padding: 8px 12px;
+  }
+}
+  
+@media screen and (max-width: 480px) {
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .header .logo{
+    width: 40px;
+    height: 40px;
+  }
+
+  .header .title {
+    font-size: 20px;
+  }
+
+  .topnav a {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+}
+
+/*
+===================================
+FOOTER STYLE
+===================================
+*/
+footer {
+  background-color: #1B5E20;
+  overflow: hidden;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  }
+  
+.bottom-nav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px 15px;
+  border-bottom: 3px solid transparent;
+  text-decoration: none;
+  max-width: 1200px;
+  }
+  
+.bottom-nav a:hover {
+  border-bottom: 3px solid white;
+  }
+  
+.bottom-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  }
+  
+.bottom-nav .copyright-container {
+  margin-left: auto;
+  }
+  
+.bottom-nav .copyright {
+  color: white;
+  font-size: 14px;
+  margin-right: 4%;
+  }
+  
+/*
+=============================
+IMAGE-CONTAINER 
+=============================
+*/
+  
+/* Position the image container (needed to position the left and right arrows) */
+.imageContainer {
+  position: relative;
+  max-width: 1024px;
+  /* width: 1024px; */
+  margin: auto;
+  margin-bottom: 10px;
+  } 
+  
+/* Hide the images by default */
+.imageSlide {
+  display: none;
+  }
+  
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+  }
+  
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  }
+  
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  }
+  
+/* Position the prev button to the left */
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+  }
+  
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  }
+  
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: white;
+  padding: 2px 16px;
+  color: black;
+  }
+  
+/* Center the little pictures under the big one */
+.row {
+  display: flex;
+  justify-content: center;
+  }
+/*
+.row {
+    margin: 0 auto;
+    position: absolute;
+  }
+*/
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  }
+  
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+  }
+  
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+  }
+  
+.active,
+.demo:hover {
+  opacity: 1;
+  }
